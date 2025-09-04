@@ -4,14 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EmailVerifier API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        pre {
+            background-color: #333;
+            color: #f4f4f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body > p {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
 <h1>EmailVerifier API</h1>
 <p>Verify emails instantly. No signup required.</p>
+<p>Contact: temirlan.basitov@gmail.com</p>
+
 <pre>
 POST https://your-api-url/api/verify
 Header: X-API-KEY:temix
 Body: { "email": "user@example.com" }
-  </pre>
+    </pre>
+<pre>
+Response:
+{
+  "validFormat": true,
+  "hasMX": true,
+  "isDisposable": false,
+  "domain": "example.com"
+}
+</pre>
 </body>
 </html>
