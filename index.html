@@ -22,6 +22,11 @@
             margin: 0;
         }
 
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
         p {
             text-align: center;
             font-size: 1.2em;
@@ -35,30 +40,62 @@
             border-radius: 5px;
             margin: 20px auto;
             width: 90%;
-            max-width: 600px;
+            max-width: 700px;
             overflow-x: auto;
             font-family: 'Courier New', Courier, monospace;
         }
 
-        body > p {
-            margin: 20px auto;
-            width: 90%;
-            max-width: 600px;
+        .demo input {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .demo button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .demo button:hover {
+            background: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 <h1>EmailVerifier API</h1>
-<p>Verify emails instantly. No signup required.</p>
-<p>Contact: temirlan.basitov@gmail.com</p>
+<p>A free and lightweight API to verify email addresses, detect disposable domains, and check MX records.</p>
+<p>Contact: <a href="mailto:temirlan.basitov@gmail.com">temirlan.basitov@gmail.com</a></p>
 
+<h2>Example Usage (curl)</h2>
+<pre>
+curl -X POST https://email-verifier-api-production-12ee.up.railway.app/api/verify \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: temix" \
+  -d '{"email": "user@example.com"}'
+</pre>
+
+<h2>API Endpoint</h2>
 <pre>
 POST https://email-verifier-api-production-12ee.up.railway.app/api/verify
-Header: X-API-KEY:temix
+Header: X-API-KEY: temix
 Body: { "email": "user@example.com" }
 </pre>
+
+<h2>Example Response</h2>
 <pre>
-Response:
 {
   "validFormat": true,
   "hasMX": true,
@@ -66,5 +103,9 @@ Response:
   "domain": "example.com"
 }
 </pre>
+
+<footer>
+    Made with ❤️ by Temirlan Basitov
+</footer>
 </body>
 </html>
